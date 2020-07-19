@@ -40,10 +40,6 @@ html, body {
   margin-top: 15px;
 }
 
-img {
-  display: block;
-}
-
 /**
  * Сброс стилей
  **/
@@ -842,4 +838,113 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   .page-books__item {
     flex-basis: 100%;
   }
+}
+
+.page-slider {
+  padding: 230px 0 160px 0;
+  clip-path: polygon(50% 12%, 100% 3%, 100% 92%, 50% 100%, 0% 92%, 0% 3%);
+  background-color: #44444f;
+  text-align: center;
+}
+
+.page-slider__ava {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  margin: 0 auto;
+}
+
+.page-slider__img {
+  width: 152px;
+  height: 152px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.page-slider__img img {
+  display: block;
+  max-width: 100%;
+}
+
+.page-slider__el {
+  position: absolute;
+  background: url("../images/bq.png") no-repeat;
+  top: 0;
+  right: -7px;
+  display: block;
+  width: 48px;
+  height: 42px;
+}
+
+.page-slider__title {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  font-size: 24px;
+  color: #65e496;
+  margin: 20px 0 32px 0;
+}
+
+.page-slider__title span {
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.75px;
+  font-weight: 400;
+  color: #9191b5;
+  line-height: 28px;
+}
+
+.page-slider__desc {
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: 0.75px;
+  font-weight: 400;
+  color: #9191b5;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.slick-dots li {
+  margin-right: 10px;
+}
+
+.slick-dots li:last-child {
+  margin-right: 0;
+}
+
+.slick-dots button {
+  font-size: 0;
+  background-color: #62d4a7;
+  border: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  line-height: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.slick-dots button:focus {
+  outline: none;
+}
+
+.slick-dots li.slick-active button {
+  width: 37px;
+  border-radius: 10px;
 }
