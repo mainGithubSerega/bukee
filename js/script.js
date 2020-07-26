@@ -20,3 +20,77 @@ $(document).ready(function(){
         autoplaySpeed:3000,
     });
 });
+let content = document.querySelectorAll('.page-books__desc')
+content.forEach(item => {
+    item.style.display = 'none'
+})
+document.querySelectorAll('.page-books__button').forEach(item => {
+    item.addEventListener('click', function(e){
+        e.preventDefault()
+        let data = this.getAttribute('data')
+        document.querySelector(`.page-books__desc[data="${data}"]`).style.display = 'block'
+        this.style.display = 'none'
+    })
+});
+document.querySelector('.page-content__btn').addEventListener('click', function(e){
+    e.preventDefault()
+    let list = document.querySelector('.page-content__menu--hide')
+    list.style.display = 'block'
+    this.style.display = 'none'
+})
+
+
+;
+
+let btn = document.querySelectorAll('.page-events__btn').forEach(item => {
+    item.addEventListener('click',function(e){
+        e.preventDefault()
+        function generate(){
+            let chip = document.createElement('div')
+            console.log(chip)
+            chip.style.width = '100px'
+            chip.style.height = '30px'
+            chip.style.backgroundColor = 'rgba(101,228,176,0.7)'
+            chip.style.position = 'fixed'
+            chip.style.top = '80px'
+            chip.style.right = '15px'
+            chip.style.padding = '0px 10px'
+            chip.style.lineHeight = '29px'
+            chip.style.textAlign = 'center' 
+            chip.style.borderRadius = '10px'
+            chip.style.textTransform = 'uppercase'
+            chip.style.fontSize = '12px'
+            chip.style.letterSpacing = '0.9px'
+            chip.style.color = '#ffffff'
+            chip.innerHTML = 'registered'
+            const page = document.querySelector('body')
+            page.insertAdjacentElement('afterbegin', chip)
+            setTimeout(function(){
+                chip.remove()
+            }, 1300)
+        }
+        generate()
+        this.style.backgroundColor = 'red'
+    })
+
+});
+const modal = (openSel,modalSel) => {
+    const btnOpen = document.querySelectorAll(openSel),
+          modalWindow = document.querySelector(modalSel)
+
+    btnOpen.forEach(item => {
+        item.addEventListener('click', function(e){
+            e.preventDefault()
+            modalWindow.style.transition = '0.2s ease'
+            modalWindow.classList.remove('hide')
+            document.body.style.overflow = 'hidden'
+        })
+    })
+    modalWindow.addEventListener('click',function(e){
+        if(e.target.classList.contains('modal-window')){
+            modalWindow.classList.add('hide')
+            document.body.style.overflow = 'auto'
+        }
+    })
+}
+modal('.main-texts__btn', '.modal-window')

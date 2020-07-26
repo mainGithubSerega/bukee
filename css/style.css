@@ -644,6 +644,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   margin-bottom: 40px;
 }
 
+.page-content__menu--hide {
+  display: none;
+}
+
 .page-content__item {
   line-height: 22px;
   font-size: 15px;
@@ -1123,6 +1127,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .page-blog__item {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .page-blog__img {
@@ -1248,7 +1253,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   width: 100%;
   border: none;
   height: 47px;
-  padding: 0;
   border-radius: 3px;
   font-size: 15px;
   letter-spacing: 0.75px;
@@ -1451,5 +1455,89 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   .page-footer__first {
     flex-basis: 100%;
     margin-bottom: 40px;
+  }
+}
+
+.modal-window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window__modal {
+  background-color: #ffffff;
+  width: 40%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.modal-window__form {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.modal-window__form input {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  background-color: #44444f;
+  border: none;
+  border-radius: 3px;
+  height: 47px;
+  padding: 0 0 0 26px;
+  box-sizing: border-box;
+  font-size: 15px;
+  letter-spacing: 0.75px;
+  color: #9191b5;
+}
+
+.modal-window__form input::placeholder {
+  font-size: 15px;
+  letter-spacing: 0.75px;
+  color: #9191b5;
+}
+
+.modal-window__form button {
+  color: #ffffff;
+  display: block;
+  width: 50%;
+  text-align: center;
+  border: none;
+  background: none;
+  background-color: #65e4a2;
+  height: 50px;
+  border-radius: 3px;
+  font-size: 17px;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0,2s ease;
+}
+
+@media (max-width: 768px) {
+  .modal-window__modal {
+    width: 85%;
+    padding: 40px 30px;
   }
 }
