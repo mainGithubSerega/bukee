@@ -391,6 +391,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 @media (max-width: 880px) {
+  .main-page {
+    padding-bottom: 100px;
+  }
   .main-page__content {
     flex-wrap: wrap;
     margin-top: 100px;
@@ -440,6 +443,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .page-counter__body {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
   display: flex;
   justify-content: space-between;
 }
@@ -511,6 +517,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 @media (max-width: 880px) {
+  .page-counter {
+    padding: 80px 0;
+  }
   .page-counter__body {
     flex-wrap: wrap;
   }
@@ -525,6 +534,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: none;
   }
   .page-counter__ava {
     flex-basis: 52%;
@@ -533,6 +543,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
   .page-counter__counter {
     flex-wrap: wrap;
+    margin-top: 100px;
   }
   .page-counter__item {
     flex-basis: 48%;
@@ -739,6 +750,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
 }
 
+@media (max-width: 880px) {
+  .page-content {
+    padding: 80px 0 100px 0;
+  }
+}
+
 .page-books {
   padding: 150px 0 110px;
 }
@@ -835,6 +852,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
   .page-books__item:last-child {
     margin: 0 auto;
+  }
+}
+
+@media (max-width: 880px) {
+  .page-books {
+    padding: 100px 0;
   }
 }
 
@@ -1088,6 +1111,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
 }
 
+@media (max-width: 880px) {
+  .page-events {
+    padding: 80px 0;
+  }
+}
+
 @media (max-width: 500px) {
   .page-events__ava {
     display: none;
@@ -1202,6 +1231,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   }
 }
 
+@media (max-width: 880px) {
+  .page-blog {
+    padding: 80px 0 100px 0;
+  }
+}
+
 @media (max-width: 600px) {
   .page-blog__body {
     justify-content: center;
@@ -1283,6 +1318,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 @media (max-width: 850px) {
+  .page-form {
+    padding: 100px 0;
+  }
   .page-form__body {
     margin: 0;
     flex-wrap: wrap;
@@ -1301,7 +1339,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .page-footer {
   background-color: #44444f;
-  padding: 150px 0;
+  padding: 120px 0;
 }
 
 .page-footer__body {

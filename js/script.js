@@ -93,4 +93,19 @@ const modal = (openSel,modalSel) => {
         }
     })
 }
-modal('.main-texts__btn', '.modal-window')
+modal('.main-texts__btn', '.modal-window');
+const scrolling = () => {
+    window.addEventListener('scroll',function(){
+        let counter = document.querySelector('.page-counter__body')
+        if(document.documentElement.scrollTop > 550){
+            counter.style.opacity = '1'
+            counter.style.visibility = 'initial'
+            counter.style.transition = '0.4s ease'
+        } else{
+            counter.style.opacity = '0'
+            counter.style.visibility = 'hidden'
+            counter.style.transition = '0.4s ease'  
+        }
+    })
+}
+scrolling()
