@@ -769,6 +769,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   flex-basis: 33.33%;
   text-align: center;
   margin-bottom: 50px;
+  position: relative;
+  bottom: -100px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
 }
 
 .page-books__img {

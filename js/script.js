@@ -96,6 +96,7 @@ const modal = (openSel,modalSel) => {
 modal('.main-texts__btn', '.modal-window');
 const scrolling = () => {
     window.addEventListener('scroll',function(){
+        console.log(document.documentElement.scrollTop)
         let counter = document.querySelector('.page-counter__body')
         if(document.documentElement.scrollTop > 550){
             counter.style.opacity = '1'
@@ -106,6 +107,20 @@ const scrolling = () => {
             counter.style.visibility = 'hidden'
             counter.style.transition = '0.4s ease'  
         }
+            let books = document.querySelectorAll('.page-books__item')
+            books.forEach(book => {
+                if(document.documentElement.scrollTop > 2730){
+                    book.style.opacity = '1'
+                    book.style.visibility = 'initial'
+                    book.style.bottom = '0'
+                    book.style.transition = '0.4s ease'
+                } else {
+                    book.style.opacity = '0'
+                    book.style.visibility = 'hidden'
+                    book.style.bottom = '-100px'
+                    book.style.transition = '0.4s ease'
+                }
+            })
     })
 }
 scrolling()
