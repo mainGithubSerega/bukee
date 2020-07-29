@@ -96,6 +96,8 @@ const modal = (openSel,modalSel) => {
 modal('.main-texts__btn', '.modal-window');
 const scrolling = () => {
     window.addEventListener('scroll',function(){
+        let ava = document.querySelector('.page-events__ava')
+        let content = document.querySelector('.page-events__content')
         console.log(document.documentElement.scrollTop)
         let counter = document.querySelector('.page-counter__body')
         if(document.documentElement.scrollTop > 550){
@@ -121,6 +123,18 @@ const scrolling = () => {
                     book.style.transition = '0.4s ease'
                 }
             })
+
+            if(document.documentElement.scrollTop > 4600){
+                ava.style.opacity = content.style.opacity = '1'
+                ava.style.left = '0'
+                ava.style.transition = content.style.transition = '0.4s ease'
+                content.style.right = '0'
+            } else {
+                ava.style.opacity = content.style.opacity = '0'
+                ava.style.left = '-200px'
+                ava.style.transition = content.style.transition = '0.4s ease'
+                content.style.right = '-200px'
+            }
     })
 }
 scrolling()
