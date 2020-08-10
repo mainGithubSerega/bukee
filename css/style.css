@@ -29,6 +29,14 @@ html, body {
   font-weight: 700;
   text-align: center;
   margin-bottom: 75px;
+  transform: translate(0, -120%);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+
+.main-title._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .main-title span {
@@ -104,7 +112,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .main-page {
   background: linear-gradient(to right, #46778b, #50a39a);
-  min-height: 100vh;
   padding-bottom: 160px;
 }
 
@@ -249,7 +256,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .main-texts {
+  transform: translate(100%, 0);
+  opacity: 0;
+  transition: 0.5s ease;
   flex: 1 1 auto;
+}
+
+.main-texts._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .main-texts__author {
@@ -443,9 +458,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .page-counter__body {
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s ease;
   display: flex;
   justify-content: space-between;
 }
@@ -578,6 +590,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .page-content__book {
   flex-basis: 39%;
+  transform: translate(-120%, 0);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.page-content__book._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .page-content__title {
@@ -647,6 +667,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .page-content__content {
   flex-basis: 46%;
+  transform: translate(120%, 0);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.page-content__content._active {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .page-content__menu {
@@ -763,17 +791,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 .page-books__body {
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: 0.6s ease;
+}
+
+.page-books__body._active {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .page-books__item {
   flex-basis: 33.33%;
   text-align: center;
   margin-bottom: 50px;
-  position: relative;
-  bottom: -100px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s ease;
 }
 
 .page-books__img {
@@ -991,12 +1022,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 
 .page-events__ava {
-  position: relative;
-  left: -200px;
   flex-basis: 39%;
   padding: 0 30px 0 0;
   box-sizing: border-box;
-  opacity: 0;
+  position: relative;
 }
 
 .page-events__svg {
@@ -1026,9 +1055,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .page-events__content {
   flex-basis: 47.8%;
-  position: relative;
-  right: -200px;
-  opacity: 0;
 }
 
 .page-events__name {
@@ -1174,6 +1200,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   overflow: hidden;
   width: 100%;
   padding: 0 0 56.3% 0;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.6s ease;
+}
+
+.page-blog__img._active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .page-blog__img img {

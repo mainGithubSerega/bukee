@@ -94,47 +94,38 @@ const modal = (openSel,modalSel) => {
     })
 }
 modal('.main-texts__btn', '.modal-window');
-const scrolling = () => {
-    window.addEventListener('scroll',function(){
-        let ava = document.querySelector('.page-events__ava')
-        let content = document.querySelector('.page-events__content')
-        console.log(document.documentElement.scrollTop)
-        let counter = document.querySelector('.page-counter__body')
-        if(document.documentElement.scrollTop > 550){
-            counter.style.opacity = '1'
-            counter.style.visibility = 'initial'
-            counter.style.transition = '0.4s ease'
-        } else{
-            counter.style.opacity = '0'
-            counter.style.visibility = 'hidden'
-            counter.style.transition = '0.4s ease'  
-        }
-            let books = document.querySelectorAll('.page-books__item')
-            books.forEach(book => {
-                if(document.documentElement.scrollTop > 2730){
-                    book.style.opacity = '1'
-                    book.style.visibility = 'initial'
-                    book.style.bottom = '0'
-                    book.style.transition = '0.4s ease'
-                } else {
-                    book.style.opacity = '0'
-                    book.style.visibility = 'hidden'
-                    book.style.bottom = '-100px'
-                    book.style.transition = '0.4s ease'
-                }
-            })
 
-            if(document.documentElement.scrollTop > 4600){
-                ava.style.opacity = content.style.opacity = '1'
-                ava.style.left = '0'
-                ava.style.transition = content.style.transition = '0.4s ease'
-                content.style.right = '0'
-            } else {
-                ava.style.opacity = content.style.opacity = '0'
-                ava.style.left = '-200px'
-                ava.style.transition = content.style.transition = '0.4s ease'
-                content.style.right = '-200px'
-            }
-    })
-}
-scrolling()
+const animItems = document.querySelectorAll('._anim-items');
+
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
+	function animOnScroll() {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 4;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('_anim-no-hide')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+	}
+	
+	animOnScroll();
+};
